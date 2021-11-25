@@ -1,0 +1,15 @@
+name: build and test
+on: [push, pull_request]
+
+jobs:
+  build:
+    run-on: ubuntun-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v1
+      - name: java installieren
+        uses: actions/setup-java@v1
+        with:
+          - java-version 11
+      - name: run gradle
+        run: ./gradlew check

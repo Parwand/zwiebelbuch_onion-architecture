@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buecher Drucken</title>
+    <link rel="stylesheet" href="../static/bootstrap.min.css" th:href="@{/bootstrap.min.css}">
+</head>
+<body class="container">
+
+<ul th:each="buch : ${buchList}" th:remove="all-but-first">
+    <li><a th:href="@{kapitels(buchId=${buch.id})}" th:text="${buch.titel}" class="text-dark">Buch 1</a>
+        <form method="post" action="druck">
+            <input type="hidden" name="buch" th:value="${buch.id}">
+            <button type="submit" class="btn btn-sm btn-outline-primary">Drucken</button>
+        </form>
+    </li>
+    <li>Buch 2</li>
+    <li>Buch 3</li>
+    <li>Buch 4</li>
+
+</ul>
+
+</body>
+</html>

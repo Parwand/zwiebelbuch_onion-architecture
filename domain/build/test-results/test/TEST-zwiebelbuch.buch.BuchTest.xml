@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="zwiebelbuch.buch.BuchTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-11-25T23:20:52" hostname="parwand" time="0.05">
+  <properties/>
+  <testcase name="Das title kann umbenannt werden" classname="zwiebelbuch.buch.BuchTest" time="0.042"/>
+  <testcase name="Das Buch ist noch nicht bereit" classname="zwiebelbuch.buch.BuchTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

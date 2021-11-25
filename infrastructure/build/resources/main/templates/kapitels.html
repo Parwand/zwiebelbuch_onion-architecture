@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kapitels</title>
+    <link rel="stylesheet" href="../static/bootstrap.min.css" th:href="@{/bootstrap.min.css}">
+</head>
+<body class="container">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Kapitel Nr</th>
+                <th>Text</th>
+                <th>Status</th>
+                <th>Freigabe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="kapitel : ${buch.kapitels}">
+                <td th:text="${kapitel.nr}"></td>
+                <td th:text="${kapitel.text}"></td>
+                <td th:text="${kapitel.status}"></th>
+                <td th:if="${!kapitel.status.toString().equals('FERTIG')}">
+                    <form action="/freigeben" method="post">
+                        <label for="buchId"></label>
+                        <input hidden name="buchId" th:value="${buch.id}" id="buchId">
+                        <label for="uuid"></label>
+                        <input hidden name="uuid" th:value="${kapitel.uuid}" id="uuid">
+                        <button class="btn btn-sm btn-outline-primary">Freigeben</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/"><button class="btn btn-outline-primary btn-sm">Startseite</button></a>
+</body>
+</html>
