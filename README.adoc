@@ -1,0 +1,8 @@
+= zwiebeluch - onion architecture
+
+=== Wichtig
+
+Um die Anwendung auszuführen, muss die Datenbank im Docker auf dem Server laufen.
+Dazu File docker-compose.yml mit `docker-compose -f docker-compose.yml up -d` ausführen
+
+* https://www.parwand.net[Parwand Alsino]
